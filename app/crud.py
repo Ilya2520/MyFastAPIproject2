@@ -17,13 +17,13 @@ def create_menu(db: Session, menu: Menu):
 
 def read_menu(session: Session, menu_id: uuid.UUID):
     db_menu = session.query(MenuModel).filter(MenuModel.id == menu_id).first()
-    submenus_count = session.query(func.count(SubmenuModel.id)).filter(SubmenuModel.menu_id == menu_id).scalar() or 0
+    submenus_count = session.query(func.count(SubmenuModel.id)).filter(SubmenuModel.menu_id == menu_id).scalar() or 0 #агрегационый запрос на подсчёт количества подменю в меню
     submenus_with_dishes = session.query(SubmenuModel.id, SubmenuModel.title, SubmenuModel.description,
                                          func.count(DishModel.id).label("dishes_count")). \
         outerjoin(DishModel, SubmenuModel.id == DishModel.submenu_id). \
         filter(SubmenuModel.menu_id == menu_id). \
         group_by(SubmenuModel.id, SubmenuModel.title, SubmenuModel.description). \
-        all()
+        all()#агрегационый запрос на подсчёт количества блюд в меню
 
     submenu_info = [{"id": submenu.id, "title": submenu.title, "description": submenu.description,
                      "dishes_count": submenu.dishes_count} for submenu in submenus_with_dishes]
