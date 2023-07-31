@@ -1,4 +1,4 @@
-# MyFiastAPIproject2
+# MyFastAPIproject2
 FastApi project
 # MyFastApiProject
 
@@ -36,6 +36,8 @@ docker-compose up --build
 - Теперь программа готова к тестированию
 
 ### Запуск тестирования
+Тестирование всех crud-операций на успешое выполнение, также тестируется сценарий на подсчёт количества блюд в меню и подменю. Файл тестов находится в app/test_main.py
+
 Для запуска тестов запустите следующую команду
 ```
 docker-compose -f docker-compose-test.yml up
