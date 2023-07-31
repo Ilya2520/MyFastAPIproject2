@@ -2,7 +2,7 @@
 FastApi project
 # MyFastApiProject
 
-Проект на FastAPI с использованием PostgreSQL в качестве БД. Реализация REST API по работе с меню ресторана. Для более удобного запуска используется docker-compose.
+Проект на FastAPI с использованием PostgreSQL в качестве БД. Реализация REST API по работе с меню ресторана. Для более удобного запуска используется docker-compose. Версия 2, добавлены агрегационные запросы, добавлены тесты, добавлен тестовый сценарий подсчёт количества блюд в меню и подменю.
 
 ## Установка и запуск
 
@@ -18,8 +18,8 @@ FastApi project
 ### Клонирование репозитория
 
 ```bash
-git clone https://github.com/your_username/MyFastApiProject.git
-cd MyFastApiProject
+git clone https://github.com/Ilya2520/MyFastAPIproject2.git
+cd MyFastAPIproject2
 ```
 
 ### Запуск проекта
